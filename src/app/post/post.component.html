@@ -5,6 +5,7 @@
     </div>
 <div class="col-md-12 m-3" *ngFor="let Post of post">
     {{Post.body}}
+    <span (click)="addToFav(post)" class="badge badge-primary">Favori Ekle</span>
 </div>
 </div>
 </div>
