@@ -3,7 +3,7 @@ import { Post } from './post';
 import { user } from './users';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute} from '@angular/router';
-declare let alertify:any;
+declare let alertify :any;
 
 @Component({
   selector: 'app-post',
@@ -49,7 +49,7 @@ export class PostComponent implements OnInit {
   }
 
   addToFav(post) {
-    alertify.succes("Başarıyla Eklendi");
+    alertify.success('Ok');
   }
 
 }
