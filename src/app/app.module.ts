@@ -9,6 +9,7 @@ import { CompComponent } from './comp/comp.component';
 import { NavComponent } from './nav/nav.component';
 import { PostComponent } from './post/post.component';
 import { Post } from './post/post';
+import { AlertifyService } from './services/alertify.service';
 
 
 const routes :Routes=[
@@ -30,7 +31,7 @@ const routes :Routes=[
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [AlertifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

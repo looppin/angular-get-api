@@ -3,17 +3,24 @@ import { Post } from './post';
 import { user } from './users';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute} from '@angular/router';
-declare let alertify :any;
+import { SelectControlValueAccessor } from '@angular/forms';
+import {AlertifyService} from '../services/alertify.service';
+
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styleUrls: ['./post.component.css'],
+  providers: [AlertifyService]
 })
 
 export class PostComponent implements OnInit {
 
-  constructor(private http:HttpClient, private activatedRoute:ActivatedRoute) { }
+  constructor(
+    private http:HttpClient, 
+    private activatedRoute:ActivatedRoute,
+    private alertifyService: AlertifyService
+    ) { }
 
   path:string="https://jsonplaceholder.typicode.com/";
   post:Post[];
@@ -49,7 +56,7 @@ export class PostComponent implements OnInit {
   }
 
   addToFav(post) {
-    alertify.success('Ok');
+    this.alertifyService.success("Başarılı")
   }
 
 }
